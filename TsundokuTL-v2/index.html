@@ -1,0 +1,245 @@
+
+
+<!-- 
+ ローカルで実行するためには
+ python -m http.server 8000
+ で一度サーバを立てる必要がある
+ ※windowsのfile://...ではシステム的に処理できない 
+  -->
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>積読タイムライン</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #e0e0e0;
+            font-family: 'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', sans-serif;
+            overscroll-behavior: none;
+        }
+
+        .svg-container {
+            width: 100%;
+            max-width: 2000px;
+            margin: 0 auto;
+            border: 1px solid #505050;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #1f1f1f;
+            cursor: default;
+        }
+
+        .node {
+            cursor: pointer;
+            transition: opacity 0.4s ease;
+        }
+
+        .node circle {
+            stroke-width: 3px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .node:hover circle {
+            transform: scale(1.2);
+        }
+
+        .node text {
+            font-size: 27px;
+            fill: #e0e0e0;
+            font-weight: bold;
+            pointer-events: none;
+        }
+
+        .link {
+            stroke: #696969;
+            /* 消灯時の色 */
+            stroke-width: 4px;
+            stroke-opacity: 0.7;
+            transition: all 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        .link-hitbox {
+            stroke: transparent;
+            stroke-width: 20px;
+            /* クリック判定を広げる */
+            cursor: pointer;
+        }
+
+        .separator {
+            stroke: #333;
+            stroke-width: 1px;
+            stroke-dasharray: 8, 8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">積読タイムライン</h1>
+    <div class="svg-container">
+        <svg>
+            <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="5" result="coloredBlur"></feGaussianBlur>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+    <script>
+        const svg = d3.select("svg");
+        const viewbox_width = 2000;
+        const slit_size = 300;
+        const tsun_node_width = (viewbox_width / 2) - slit_size;
+        const doku_node_width = (viewbox_width / 2) + slit_size;
+
+        const colors = {
+            tsun: "#ff00ff", // Magenta
+            doku: "#00ffff", // Cyan
+            link: {
+                default: "#333",
+                highlight: "#ffffff"
+            }
+        };
+
+        let allNodes, allLinks;
+
+        fetch("./graph_data.json")
+            .then(response => response.ok ? response.json() : Promise.reject("Failed to fetch JSON data"))
+            .then(data => {
+                svg.attr("viewBox", `0 0 ${viewbox_width} ${data.svgHeight}`);
+                drawGraph(data);
+            })
+            .catch(error => console.error("Error loading data:", error));
+
+        function drawGraph(data) {
+            svg.selectAll(".separator").data(data.separatorLines).enter().append("line")
+                .attr("class", "separator")
+                .attr("x1", 0).attr("y1", d => d)
+                .attr("x2", viewbox_width).attr("y2", d => d);
+
+            svg.selectAll(".caption").data(data.captionTexts).enter().append("text")
+                .attr("class", "caption")
+                .attr("x", 10).attr("y", (d, i) => data.separatorLines[i] - 5)
+                .attr("dy", 140).attr("text-anchor", "start")
+                .style("font-size", "150px").style("fill", "rgba(255, 255, 255, 0.05)")
+                .style("font-family", "'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', sans-serif")
+                .style("font-weight", "bold").style("letter-spacing", "-14px")
+                .text(d => d);
+
+            const linkGroup = svg.append("g").attr("class", "links");
+
+            allLinks = linkGroup.selectAll("line.link").data(data.links).enter().append("line")
+                .attr("class", "link")
+                .attr("x1", d => findNodeX(d.source, data.nodes)).attr("y1", d => findNodeY(d.source, data.nodes))
+                .attr("x2", d => findNodeX(d.target, data.nodes)).attr("y2", d => findNodeY(d.target, data.nodes))
+                .style("opacity", 0);
+            allLinks.transition().duration(1000).style("opacity", 0.7);
+
+            const allHitboxes = linkGroup.selectAll("line.link-hitbox").data(data.links).enter().append("line")
+                .attr("class", "link-hitbox")
+                .attr("x1", d => findNodeX(d.source, data.nodes)).attr("y1", d => findNodeY(d.source, data.nodes))
+                .attr("x2", d => findNodeX(d.target, data.nodes)).attr("y2", d => findNodeY(d.target, data.nodes));
+
+            allNodes = svg.append("g").selectAll("g.node").data(data.nodes).enter().append("g")
+                .attr("class", "node")
+                .attr("transform", d => `translate(${d.group === '積' ? tsun_node_width : doku_node_width}, 0)`);
+
+            allNodes.transition().duration(1000)
+                .attr("transform", d => `translate(${d.group === '積' ? tsun_node_width : doku_node_width}, ${d.y})`);
+
+            allNodes.append("circle")
+                .attr("r", 25)
+                .attr("fill", "#1f1f1f")
+                .attr("stroke", d => d.group === '積' ? colors.tsun : colors.doku);
+
+            allNodes.append("text")
+                .attr("x", d => d.group === '積' ? -45 : 45)
+                .attr("y", 10)
+                .attr("text-anchor", d => d.group === '積' ? "end" : "start")
+                .text(d => d.label);
+
+            svg.on("click", function(event) {
+                const nodeElement = event.target.closest('.node');
+                const linkHitboxElement = event.target.closest('.link-hitbox');
+
+                if (nodeElement) {
+                    highlight(d3.select(nodeElement).datum(), data);
+                } else if (linkHitboxElement) {
+                    highlight(d3.select(linkHitboxElement).datum(), data);
+                } else {
+                    resetHighlight();
+                }
+            });
+        }
+
+        function highlight(clickedData, allData) {
+            const getLinkId = l => `${l.source}-${l.target}`;
+            let connectedNodes = new Set();
+            let connectedLinkIds = new Set();
+
+            if (clickedData.source) { // Link was clicked
+                connectedLinkIds.add(getLinkId(clickedData));
+                connectedNodes.add(clickedData.source).add(clickedData.target);
+            } else { // Node was clicked
+                connectedNodes.add(clickedData.id);
+                allData.links.forEach(l => {
+                    if (l.source === clickedData.id || l.target === clickedData.id) {
+                        connectedLinkIds.add(getLinkId(l));
+                        connectedNodes.add(l.source).add(l.target);
+                    }
+                });
+            }
+
+            allNodes.style("opacity", n => connectedNodes.has(n.id) ? 1 : 0.1)
+                .select("circle")
+                .attr("filter", n => connectedNodes.has(n.id) ? "url(#glow)" : null)
+                .attr("fill", n => connectedNodes.has(n.id) ? (n.group === '積' ? colors.tsun : colors.doku) : "#1f1f1f");
+
+            allLinks
+                .style("stroke", l => connectedLinkIds.has(getLinkId(l)) ? colors.link.highlight : colors.link.default)
+                .style("stroke-opacity", l => connectedLinkIds.has(getLinkId(l)) ? 1 : 0.2)
+                .style("stroke-width", l => connectedLinkIds.has(getLinkId(l)) ? 8 : 4)
+                .attr("filter", l => connectedLinkIds.has(getLinkId(l)) ? "url(#glow)" : null);
+        }
+
+        function resetHighlight() {
+            if (allNodes) {
+                allNodes.style("opacity", 1)
+                    .select("circle")
+                    .attr("filter", null)
+                    .attr("fill", "#1f1f1f");
+            }
+            if (allLinks) {
+                allLinks.style("stroke", colors.link.default)
+                    .style("stroke-opacity", 0.7)
+                    .style("stroke-width", 4)
+                    .attr("filter", null);
+            }
+        }
+
+        function findNodeX(id, nodes) {
+            const node = nodes.find(n => n.id === id);
+            return node ? (node.group === '積' ? tsun_node_width : doku_node_width) : 0;
+        }
+
+        function findNodeY(id, nodes) {
+            const node = nodes.find(n => n.id === id);
+            return node ? node.y : 0;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>積読タイムライン（試作品）</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        svg {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+
+        /* SVGをラップするdiv */
+        .svg-container {
+            text-align: center;
+        }
+
+        .node circle {
+            /* fill:rgb(255, 255, 255); */
+            stroke: #333;
+            stroke-width: 2px;
+            /* fill: rgb(101, 106, 255); */
+        }
+
+        .node text {
+            font-size: 27px;
+            fill: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+
+        .link {
+            stroke: #828282;
+            stroke-width: 1px;
+        }
+
+        .separator {
+            stroke: black;
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            /* 点線スタイル */
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">購入タイトル　　　　　：　　　　　読了タイトル</h1>
+    <svg width="1800" height="9690"></svg>
+    <script>
+        // SVG領域を選択
+        const svg = d3.select("svg");
+        const width = svg.attr("width");
+        const height = svg.attr("height");
+        const slit_size = 250
+        const tsun_node_width = (width / 2) - slit_size
+        const doku_node_width = (width / 2) + slit_size
+
+
+        // JSONデータを読み込んで描画
+        fetch("./auto.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch JSON data");
+                }
+                return response.json();
+            })
+            .then(data => {
+                drawGraph(data);
+            })
+            .catch(error => console.error("Error loading data:", error));
+
+        function drawGraph(data) {
+            const separatorLines = [35, 805, 1365, 1645, 2345, 2555, 2835, 3045, 3255, 3465, 4025, 4655, 4865, 5075, 5495, 5705, 5915, 6265, 6615, 6825, 7035, 7245, 7455, 7875, 8295, 8785, 8995, 9205, 9415];
+            const captionTexts = [
+                "2022年09月", "2022年10月", "2022年11月", "2022年12月",
+                "2023年01月", "2023年02月", "2023年03月", "2023年04月", "2023年05月", "2023年06月", "2023年07月", "2023年08月", "2023年09月", "2023年10月", "2023年11月", "2023年12月",
+                "2024年01月", "2024年02月", "2024年03月", "2024年04月", "2024年05月", "2024年06月", "2024年07月", "2024年08月", "2024年09月", "2024年10月", "2024年11月", "2024年12月",
+                "2025年01月"
+            ];
+            svg.selectAll(".separator")
+                .data(separatorLines) // データをバインド
+                .enter()
+                .append("line")
+                .attr("class", "separator")
+                .attr("x1", 0)
+                .attr("y1", d => d) // y1はデータから取得
+                .attr("x2", width)
+                .attr("y2", d => d) // y2も同じくデータから取得
+                .style("stroke", "black") // 線の色（任意で設定）
+                .style("stroke-width", 1); // 線の幅（任意で設定）
+
+
+            // キャプションテキストを描画
+            svg.selectAll(".caption")
+                .data(captionTexts)
+                .enter()
+                .append("text")
+                .attr("x", 10)  // テキストの位置（左端）
+                .attr("y", (d, i) => separatorLines[i] - 5) // キャプションの位置（各区切り線に合わせて配置）
+                .attr("dy", 140) // 少し上に配置（y1より少し上）
+                .attr("text-anchor", "start") // 左揃え
+                .style("font-size", "150px")   // フォントサイズの指定
+                .style("fill", "rgba(129, 182, 117, 0.35)") // 色を設定
+                .style("font-family", "'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro',sans-serif") // フォントファミリーを指定
+                .style("font-weight", "bold")
+                .style("letter-spacing", "-14px") // 文字間隔を詰める
+                .text(d => d);  // 各テキストを設定
+
+
+
+            // エッジを描画
+            svg.selectAll("line.link")
+                .data(data.links)
+                .enter()
+                .append("line")
+                .attr("class", "link")
+                .attr("x1", d => findNodeX(d.source, data.nodes))
+                .attr("y1", d => findNodeY(d.source, data.nodes))
+                .attr("x2", d => findNodeX(d.target, data.nodes))
+                .attr("y2", d => findNodeY(d.target, data.nodes))
+                .style("stroke", d => d.color) // リンクごとの色を設定
+                .style("stroke-width", "4px"); // 線幅の設定
+
+            // ノードを描画
+            const node = svg.selectAll("g.node")
+                .data(data.nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", d => `translate(${d.group === "積" ? tsun_node_width : doku_node_width}, ${d.y})`);
+
+
+            // ノードの円を描画
+            node.append("circle")
+                .attr("r", 25)
+                .attr("fill", d => d.group === "積" ? "rgb(101, 178, 255)" : "rgb(101, 255, 165)");
+
+            // ノードのラベルを描画
+            node.append("text")
+                .attr("x", d => d.group === "積" ? -45 : 45)
+                .attr("y", 10)
+                .attr("text-anchor", d => d.group === "積" ? "end" : "start")
+                .text(d => d.label);
+        }
+
+        function findNodeX(id, nodes) {
+            const node = nodes.find(n => n.id === id);
+            return node ? (node.group === "積" ? tsun_node_width : doku_node_width) : 0;
+        }
+
+        function findNodeY(id, nodes) {
+            const node = nodes.find(n => n.id === id);
+            return node ? node.y : 0;
+        }
+    </script>
+</body>
+
+</html>
