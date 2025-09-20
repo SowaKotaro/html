@@ -171,15 +171,18 @@
                 .attr("text-anchor", d => d.group === '積' ? "end" : "start")
                 .text(d => d.label);
 
-            svg.on("click", function(event) {
-                const nodeElement = event.target.closest('.node');
-                const linkHitboxElement = event.target.closest('.link-hitbox');
+            allNodes.on("click", function(event, d) {
+                event.stopPropagation();
+                highlight(d, data);
+            });
 
-                if (nodeElement) {
-                    highlight(d3.select(nodeElement).datum(), data);
-                } else if (linkHitboxElement) {
-                    highlight(d3.select(linkHitboxElement).datum(), data);
-                } else {
+            allHitboxes.on("click", function(event, d) {
+                event.stopPropagation();
+                highlight(d, data);
+            });
+
+            svg.on("click", function(event) {
+                if (!event.target.closest('.node') && !event.target.closest('.link-hitbox')) {
                     resetHighlight();
                 }
             });
