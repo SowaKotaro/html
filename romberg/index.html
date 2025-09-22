@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数式グラフ描画</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>数式グラフ描画</h1>
+    <div class="container">
+        <div class="input-area">
+            <label for="formula-input">数式をLaTeX形式で入力してください:</label>
+            <input type="text" id="formula-input" placeholder="例: x^2 + 2*x + 1">
+            <button id="draw-button">グラフを描画</button>
+        </div>
+        <div class="graph-area">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
