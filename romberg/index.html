@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数式グラフ描画</title>
+    <title>ロンバーグ積分計算ツール</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
     <h1>数式グラフ描画</h1>
     <div class="container">
-        <div class="input-area">
-            <label for="formula-input">数式をLaTeX形式で入力してください:</label>
-            <input type="text" id="formula-input" placeholder="例: x^2 + 2*x + 1">
+        <div class="card input-area">
+            <label for="formula-input">数式を入力:</label>
+            <input type="text" id="formula-input" placeholder="例: x^2 * sin(x)">
             <button id="draw-button">グラフを描画</button>
         </div>
-        <div class="graph-area">
-            <canvas id="myChart"></canvas>
+        <div class="card graph-area">
+            <div id="graph-placeholder">ここにグラフが描画されます</div>
+            <canvas id="myChart" style="display: none;"></canvas>
+        </div>
+        <div class="card integration-area">
+            <h2>台形積分</h2>
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="lower-bound">下限:</label>
+                    <input type="text" id="lower-bound" placeholder="例: 0">
+                </div>
+                <div class="input-item">
+                    <label for="upper-bound">上限:</label>
+                    <input type="text" id="upper-bound" placeholder="例: pi">
+                </div>
+                <div class="input-item">
+                    <label for="divisions">分割数:</label>
+                    <input type="text" id="divisions" placeholder="例: 50">
+                </div>
+                <div class="input-item">
+                    <label for="true-value">真の値 (任意):</label>
+                    <input type="text" id="true-value" placeholder="比較用">
+                </div>
+            </div>
+            <button id="calculate-button">台形積分を計算</button>
+            <div id="result-area">
+                <h3>計算結果</h3>
+                <p id="integral-result"></p>
+            </div>
+        </div>
+        <div class="card romberg-area">
+            <h2>ロンバーグ積分</h2>
+            <p>さらに高精度で計算を行いたい方向け</p>
+            <button id="run-romberg-button">ロンバーグ積分を実行</button>
+            <div id="romberg-result-area"></div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/decimal.js/decimal.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
