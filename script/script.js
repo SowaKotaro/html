@@ -29,8 +29,8 @@ function applyParallax(e) {
 
     parallaxLayers.forEach(layer => {
         const speed = parseFloat(layer.dataset.speed || 0);
-        const x = (moveX * speed) / 100;
-        const y = (moveY * speed) / 100;
+        const x = (moveX * speed) / 120;
+        const y = (moveY * speed) / 120;
         layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
 }
