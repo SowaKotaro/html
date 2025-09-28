@@ -56,7 +56,6 @@
             font-size: 27px;
             fill: #e0e0e0;
             font-weight: bold;
-            pointer-events: none;
         }
 
         .link {
@@ -85,11 +84,22 @@
 
 <body>
     <h1 style="text-align: center;">積読タイムライン</h1>
+    <div class="title-container" style="position: relative; max-width: 2000px; margin: 20px auto 15px; height: 45px; font-family: 'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', sans-serif;">
+        <span id="tsun-title" style="cursor: pointer; position: absolute; left: 700px; transform: translateX(-50%); font-size: 28px; font-weight: bold; color: #e0e0e0;">積：購入タイトル</span>
+        <span id="doku-title" style="cursor: pointer; position: absolute; left: 1300px; transform: translateX(-50%); font-size: 28px; font-weight: bold; color: #e0e0e0;">読：読了タイトル</span>
+    </div>
     <div class="svg-container">
         <svg>
             <defs>
                 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="5" result="coloredBlur"></feGaussianBlur>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                </filter>
+                <filter id="caption-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="8" result="coloredBlur"></feGaussianBlur>
                     <feMerge>
                         <feMergeNode in="coloredBlur"></feMergeNode>
                         <feMergeNode in="SourceGraphic"></feMergeNode>
@@ -121,6 +131,9 @@
             .then(data => {
                 svg.attr("viewBox", `0 0 ${viewbox_width} ${data.svgHeight}`);
                 drawGraph(data);
+
+                document.getElementById("tsun-title").addEventListener("click", () => highlightGroup('積', data));
+                document.getElementById("doku-title").addEventListener("click", () => highlightGroup('読', data));
             })
             .catch(error => console.error("Error loading data:", error));
 
@@ -134,7 +147,8 @@
                 .attr("class", "caption")
                 .attr("x", 10).attr("y", (d, i) => data.separatorLines[i] - 5)
                 .attr("dy", 140).attr("text-anchor", "start")
-                .style("font-size", "150px").style("fill", "rgba(255, 255, 255, 0.05)")
+                .style("font-size", "150px").style("fill", "rgba(76, 175, 80, 0.05)")
+                .style("filter", "url(#caption-glow)")
                 .style("font-family", "'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', sans-serif")
                 .style("font-weight", "bold").style("letter-spacing", "-14px")
                 .text(d => d);
@@ -241,6 +255,39 @@
         function findNodeY(id, nodes) {
             const node = nodes.find(n => n.id === id);
             return node ? node.y : 0;
+        }
+
+        function highlightGroup(group, allData) {
+            resetHighlight();
+
+            const getLinkId = l => `${l.source}-${l.target}`;
+            let connectedNodes = new Set();
+            let connectedLinkIds = new Set();
+
+            allData.nodes.forEach(n => {
+                if (n.group === group) {
+                    connectedNodes.add(n.id);
+                }
+            });
+
+            allData.links.forEach(l => {
+                if (connectedNodes.has(l.source) || connectedNodes.has(l.target)) {
+                    connectedLinkIds.add(getLinkId(l));
+                    connectedNodes.add(l.source);
+                    connectedNodes.add(l.target);
+                }
+            });
+
+            allNodes.style("opacity", n => connectedNodes.has(n.id) ? 1 : 0.1)
+                .select("circle")
+                .attr("filter", n => connectedNodes.has(n.id) ? "url(#glow)" : null)
+                .attr("fill", n => connectedNodes.has(n.id) ? (n.group === '積' ? colors.tsun : colors.doku) : "#1f1f1f");
+
+            allLinks
+                .style("stroke", l => connectedLinkIds.has(getLinkId(l)) ? colors.link.highlight : colors.link.default)
+                .style("stroke-opacity", l => connectedLinkIds.has(getLinkId(l)) ? 1 : 0.2)
+                .style("stroke-width", l => connectedLinkIds.has(getLinkId(l)) ? 8 : 4)
+                .attr("filter", l => connectedLinkIds.has(getLinkId(l)) ? "url(#glow)" : null);
         }
     </script>
 </body>
