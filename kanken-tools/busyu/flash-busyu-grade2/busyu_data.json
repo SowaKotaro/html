@@ -1,0 +1,2162 @@
+[
+    {
+        "question": "弔",
+        "answer": "弓：ゆみ",
+        "remark": ""
+    },
+    {
+        "question": "剛",
+        "answer": "刂：りっとう",
+        "remark": ""
+    },
+    {
+        "question": "碁",
+        "answer": "石：いし",
+        "remark": ""
+    },
+    {
+        "question": "囚",
+        "answer": "囗：くにがまえ",
+        "remark": ""
+    },
+    {
+        "question": "愁",
+        "answer": "心：こころ",
+        "remark": ""
+    },
+    {
+        "question": "泰",
+        "answer": "氺：したみず",
+        "remark": ""
+    },
+    {
+        "question": "再",
+        "answer": "冂",
+        "remark": ""
+    },
+    {
+        "question": "献",
+        "answer": "犬：いぬ",
+        "remark": ""
+    },
+    {
+        "question": "累",
+        "answer": "糸：いと",
+        "remark": ""
+    },
+    {
+        "question": "窮",
+        "answer": "穴：あなかんむり",
+        "remark": ""
+    },
+    {
+        "question": "銃",
+        "answer": "金：かねへん",
+        "remark": ""
+    },
+    {
+        "question": "凸",
+        "answer": "凵：うけばこ",
+        "remark": ""
+    },
+    {
+        "question": "昆",
+        "answer": "日：ひ",
+        "remark": ""
+    },
+    {
+        "question": "崎",
+        "answer": "山：やまへん",
+        "remark": ""
+    },
+    {
+        "question": "酢",
+        "answer": "酉：とりへん",
+        "remark": ""
+    },
+    {
+        "question": "嗣",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "璽",
+        "answer": "玉：たま、たまへん",
+        "remark": ""
+    },
+    {
+        "question": "畝",
+        "answer": "田：た、たへん",
+        "remark": ""
+    },
+    {
+        "question": "壮",
+        "answer": "士：さむらい",
+        "remark": ""
+    },
+    {
+        "question": "勅",
+        "answer": "力：ちから",
+        "remark": ""
+    },
+    {
+        "question": "疎",
+        "answer": "⺪：ひきへん",
+        "remark": ""
+    },
+    {
+        "question": "甚",
+        "answer": "甘：あまい、かん",
+        "remark": "出題範囲では「甚」と「甘」のみ"
+    },
+    {
+        "question": "顎",
+        "answer": "頁：おおがい",
+        "remark": ""
+    },
+    {
+        "question": "騰",
+        "answer": "馬：うま",
+        "remark": ""
+    },
+    {
+        "question": "謄",
+        "answer": "言：げん、ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "貞",
+        "answer": "貝：かい",
+        "remark": ""
+    },
+    {
+        "question": "摩",
+        "answer": "手：て",
+        "remark": ""
+    },
+    {
+        "question": "瓶",
+        "answer": "瓦：かわら",
+        "remark": "出題範囲では「瓶」と「瓦」のみ"
+    },
+    {
+        "question": "戻",
+        "answer": "戸：とだれ、とかんむり",
+        "remark": ""
+    },
+    {
+        "question": "羅",
+        "answer": "罒：あみめ、あみがしら",
+        "remark": ""
+    },
+    {
+        "question": "産",
+        "answer": "生：うまれる",
+        "remark": ""
+    },
+    {
+        "question": "義",
+        "answer": "羊：ひつじ",
+        "remark": ""
+    },
+    {
+        "question": "奔",
+        "answer": "大：だい",
+        "remark": ""
+    },
+    {
+        "question": "妄",
+        "answer": "女：おんな、おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "賓",
+        "answer": "貝：かい、こがい",
+        "remark": ""
+    },
+    {
+        "question": "融",
+        "answer": "虫：むし",
+        "remark": ""
+    },
+    {
+        "question": "叙",
+        "answer": "又：また",
+        "remark": ""
+    },
+    {
+        "question": "迅",
+        "answer": "辶：しんにょう、しんにゅう",
+        "remark": ""
+    },
+    {
+        "question": "傘",
+        "answer": "人：ひとやね",
+        "remark": ""
+    },
+    {
+        "question": "肯",
+        "answer": "肉：にく",
+        "remark": ""
+    },
+    {
+        "question": "塾",
+        "answer": "土：つち",
+        "remark": ""
+    },
+    {
+        "question": "琴",
+        "answer": "王：おう",
+        "remark": ""
+    },
+    {
+        "question": "嚇",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "夢",
+        "answer": "夕：た、ゆうべ",
+        "remark": ""
+    },
+    {
+        "question": "尉",
+        "answer": "寸：すん",
+        "remark": ""
+    },
+    {
+        "question": "殉",
+        "answer": "歹",
+        "remark": ""
+    },
+    {
+        "question": "戯",
+        "answer": "戈：ほこ、ほこづくり",
+        "remark": ""
+    },
+    {
+        "question": "升",
+        "answer": "十：じゅう",
+        "remark": ""
+    },
+    {
+        "question": "承",
+        "answer": "手：て",
+        "remark": ""
+    },
+    {
+        "question": "喜",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "挨",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "臼",
+        "answer": "臼：うす",
+        "remark": ""
+    },
+    {
+        "question": "拳",
+        "answer": "手：て",
+        "remark": ""
+    },
+    {
+        "question": "錮",
+        "answer": "金：かねへん",
+        "remark": ""
+    },
+    {
+        "question": "鹿",
+        "answer": "鹿：しか",
+        "remark": ""
+    },
+    {
+        "question": "曽",
+        "answer": "曰：ひらび、いわく",
+        "remark": ""
+    },
+    {
+        "question": "汰",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "奈",
+        "answer": "大：だい",
+        "remark": ""
+    },
+    {
+        "question": "剥",
+        "answer": "刂：りっとう",
+        "remark": ""
+    },
+    {
+        "question": "昧",
+        "answer": "日：ひへん",
+        "remark": ""
+    },
+    {
+        "question": "慄",
+        "answer": "忄：りっしんべん",
+        "remark": ""
+    },
+    {
+        "question": "藍",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "嵐",
+        "answer": "山：やま",
+        "remark": ""
+    },
+    {
+        "question": "麻",
+        "answer": "麻：あさ",
+        "remark": ""
+    },
+    {
+        "question": "侯",
+        "answer": "亻：にんべん",
+        "remark": ""
+    },
+    {
+        "question": "衡",
+        "answer": "行：ぎょうがまえ、ゆきがまえ",
+        "remark": ""
+    },
+    {
+        "question": "享",
+        "answer": "亠：けいさんかんむり、なべぶた",
+        "remark": ""
+    },
+    {
+        "question": "刃",
+        "answer": "刀：かたな",
+        "remark": ""
+    },
+    {
+        "question": "蚊",
+        "answer": "虫：むしへん",
+        "remark": ""
+    },
+    {
+        "question": "乏",
+        "answer": "丿：の、はらいぼう",
+        "remark": ""
+    },
+    {
+        "question": "甘",
+        "answer": "甘：かん、あまい",
+        "remark": ""
+    },
+    {
+        "question": "致",
+        "answer": "至：いたる、いたるへん",
+        "remark": "出題範囲では「致」と「至」のみ"
+    },
+    {
+        "question": "宛",
+        "answer": "宀：うかんむり",
+        "remark": ""
+    },
+    {
+        "question": "苛",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "桁",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "潰",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "叱",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "狙",
+        "answer": "犭：けものへん",
+        "remark": ""
+    },
+    {
+        "question": "唾",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "那",
+        "answer": "阝：おおざと",
+        "remark": ""
+    },
+    {
+        "question": "箸",
+        "answer": "竹：たけ、たけかんむり",
+        "remark": ""
+    },
+    {
+        "question": "枕",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "踪",
+        "answer": "足：あしへん",
+        "remark": ""
+    },
+    {
+        "question": "璃",
+        "answer": "王：たまへん、おうへん",
+        "remark": ""
+    },
+    {
+        "question": "梨",
+        "answer": "木：き",
+        "remark": ""
+    },
+    {
+        "question": "尻",
+        "answer": "尸：しかばね、かばね",
+        "remark": ""
+    },
+    {
+        "question": "彰",
+        "answer": "彡：さんづくり",
+        "remark": ""
+    },
+    {
+        "question": "殻",
+        "answer": "殳：ほこづくり、るまた",
+        "remark": ""
+    },
+    {
+        "question": "糾",
+        "answer": "糸：いとへん",
+        "remark": ""
+    },
+    {
+        "question": "邸",
+        "answer": "阝：おおざと",
+        "remark": ""
+    },
+    {
+        "question": "幣",
+        "answer": "巾：はば",
+        "remark": ""
+    },
+    {
+        "question": "克",
+        "answer": "儿：にんにょう、ひとあし",
+        "remark": ""
+    },
+    {
+        "question": "凡",
+        "answer": "几：つくえ",
+        "remark": ""
+    },
+    {
+        "question": "麗",
+        "answer": "鹿：しか",
+        "remark": ""
+    },
+    {
+        "question": "椅",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "牙",
+        "answer": "牙：きば",
+        "remark": ""
+    },
+    {
+        "question": "隙",
+        "answer": "阝：こざとへん",
+        "remark": ""
+    },
+    {
+        "question": "斬",
+        "answer": "斤：おのづくり",
+        "remark": ""
+    },
+    {
+        "question": "嫉",
+        "answer": "女：おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "爽",
+        "answer": "大：だい",
+        "remark": ""
+    },
+    {
+        "question": "堆",
+        "answer": "土：つち、つちへん",
+        "remark": ""
+    },
+    {
+        "question": "謎",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "斑",
+        "answer": "文：ぶん",
+        "remark": ""
+    },
+    {
+        "question": "蜜",
+        "answer": "虫：むし",
+        "remark": ""
+    },
+    {
+        "question": "羞",
+        "answer": "羊：ひつじ",
+        "remark": ""
+    },
+    {
+        "question": "侶",
+        "answer": "亻：にんべん",
+        "remark": ""
+    },
+    {
+        "question": "脇",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "亜",
+        "answer": "二：に",
+        "remark": ""
+    },
+    {
+        "question": "旋",
+        "answer": "方：ほうへん、かたへん",
+        "remark": ""
+    },
+    {
+        "question": "菌",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "充",
+        "answer": "儿：にんにょう、ひとあし",
+        "remark": ""
+    },
+    {
+        "question": "租",
+        "answer": "禾：のぎへん",
+        "remark": ""
+    },
+    {
+        "question": "患",
+        "answer": "心：こころ",
+        "remark": ""
+    },
+    {
+        "question": "欧",
+        "answer": "欠：あくび、かける",
+        "remark": ""
+    },
+    {
+        "question": "舞",
+        "answer": "舛：まいあし",
+        "remark": ""
+    },
+    {
+        "question": "畏",
+        "answer": "田：た",
+        "remark": ""
+    },
+    {
+        "question": "崖",
+        "answer": "山：やま",
+        "remark": ""
+    },
+    {
+        "question": "詣",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "拶",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "腫",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "痩",
+        "answer": "疒：やまいだれ",
+        "remark": ""
+    },
+    {
+        "question": "戴",
+        "answer": "戈：ほこづくり、ほこがまえ",
+        "remark": ""
+    },
+    {
+        "question": "鍋",
+        "answer": "金：かねへん",
+        "remark": ""
+    },
+    {
+        "question": "氾",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "冥",
+        "answer": "冖：わかんむり",
+        "remark": ""
+    },
+    {
+        "question": "籠",
+        "answer": "竹：たけかんむり",
+        "remark": ""
+    },
+    {
+        "question": "瞭",
+        "answer": "目：めへん",
+        "remark": ""
+    },
+    {
+        "question": "丼",
+        "answer": "丶：てん",
+        "remark": ""
+    },
+    {
+        "question": "窃",
+        "answer": "穴：あなかんむり",
+        "remark": ""
+    },
+    {
+        "question": "肢",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "磨",
+        "answer": "石：いし",
+        "remark": ""
+    },
+    {
+        "question": "煩",
+        "answer": "火：ひへん",
+        "remark": ""
+    },
+    {
+        "question": "衷",
+        "answer": "衣：ころも",
+        "remark": ""
+    },
+    {
+        "question": "撤",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "匿",
+        "answer": "匸：かくしがまえ",
+        "remark": ""
+    },
+    {
+        "question": "巡",
+        "answer": "巛：まげかわ、かわ",
+        "remark": ""
+    },
+    {
+        "question": "萎",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "蓋",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "稽",
+        "answer": "禾：のぎへん",
+        "remark": ""
+    },
+    {
+        "question": "柵",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "呪",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "捉",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "誰",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "匂",
+        "answer": "勹：つつみがまえ",
+        "remark": ""
+    },
+    {
+        "question": "汎",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "麺",
+        "answer": "麦：ばくにょう",
+        "remark": ""
+    },
+    {
+        "question": "箋",
+        "answer": "竹：たけかんむり",
+        "remark": ""
+    },
+    {
+        "question": "瑠",
+        "answer": "王：たまへん、おうへん",
+        "remark": ""
+    },
+    {
+        "question": "刹",
+        "answer": "刂：りっとう",
+        "remark": ""
+    },
+    {
+        "question": "辱",
+        "answer": "辰：しんのたつ",
+        "remark": "出題範囲では「辱」と「農」のみ"
+    },
+    {
+        "question": "酷",
+        "answer": "酉：とりへん",
+        "remark": ""
+    },
+    {
+        "question": "矯",
+        "answer": "矢：やへん",
+        "remark": ""
+    },
+    {
+        "question": "虜",
+        "answer": "虍：とらがしら、とらかんむり",
+        "remark": ""
+    },
+    {
+        "question": "弦",
+        "answer": "弓：ゆみへん",
+        "remark": ""
+    },
+    {
+        "question": "粧",
+        "answer": "米：こめへん",
+        "remark": ""
+    },
+    {
+        "question": "厘",
+        "answer": "厂：がんだれ",
+        "remark": ""
+    },
+    {
+        "question": "弐",
+        "answer": "弋：しきがまえ",
+        "remark": ""
+    },
+    {
+        "question": "茨",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "骸",
+        "answer": "骨：ほねへん",
+        "remark": ""
+    },
+    {
+        "question": "熊",
+        "answer": "灬：れっか、れんが",
+        "remark": ""
+    },
+    {
+        "question": "埼",
+        "answer": "土：つちへん",
+        "remark": ""
+    },
+    {
+        "question": "蹴",
+        "answer": "足：あしへん",
+        "remark": ""
+    },
+    {
+        "question": "惧",
+        "answer": "忄：りっしんべん",
+        "remark": ""
+    },
+    {
+        "question": "旦",
+        "answer": "日：ひ",
+        "remark": ""
+    },
+    {
+        "question": "虹",
+        "answer": "虫：むしへん",
+        "remark": ""
+    },
+    {
+        "question": "眉",
+        "answer": "目：め",
+        "remark": ""
+    },
+    {
+        "question": "憬",
+        "answer": "忄：りっしんべん",
+        "remark": ""
+    },
+    {
+        "question": "瘍",
+        "answer": "疒：やまいだれ",
+        "remark": ""
+    },
+    {
+        "question": "呂",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "嘲",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "隻",
+        "answer": "隹：ふるとり",
+        "remark": ""
+    },
+    {
+        "question": "疫",
+        "answer": "疒：やまいだれ",
+        "remark": ""
+    },
+    {
+        "question": "珠",
+        "answer": "王：たまへん、おうへん",
+        "remark": ""
+    },
+    {
+        "question": "繭",
+        "answer": "糸：いと",
+        "remark": ""
+    },
+    {
+        "question": "厄",
+        "answer": "厂：がんだれ",
+        "remark": ""
+    },
+    {
+        "question": "屯",
+        "answer": "屮：てつ",
+        "remark": ""
+    },
+    {
+        "question": "既",
+        "answer": "旡：すでのつくり、ぶ、なし",
+        "remark": ""
+    },
+    {
+        "question": "戒",
+        "answer": "戈：ほこづくり、ほこがまえ",
+        "remark": ""
+    },
+    {
+        "question": "咽",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "柿",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "窟",
+        "answer": "穴：あなかんむり",
+        "remark": ""
+    },
+    {
+        "question": "采",
+        "answer": "釆：のごめ",
+        "remark": ""
+    },
+    {
+        "question": "拭",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "綻",
+        "answer": "糸：いとへん",
+        "remark": ""
+    },
+    {
+        "question": "捻",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "膝",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "摯",
+        "answer": "手：て",
+        "remark": ""
+    },
+    {
+        "question": "拉",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "賂",
+        "answer": "貝：かいへん",
+        "remark": ""
+    },
+    {
+        "question": "毀",
+        "answer": "殳：ほこづくり、るまた",
+        "remark": ""
+    },
+    {
+        "question": "斥",
+        "answer": "斤：きん",
+        "remark": "出題範囲では「斥」と「斤」のみ"
+    },
+    {
+        "question": "禍",
+        "answer": "礻：しめすへん",
+        "remark": ""
+    },
+    {
+        "question": "喝",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "准",
+        "answer": "冫：にすい",
+        "remark": ""
+    },
+    {
+        "question": "偽",
+        "answer": "亻：にんべん",
+        "remark": ""
+    },
+    {
+        "question": "貢",
+        "answer": "貝：かい、こがい",
+        "remark": ""
+    },
+    {
+        "question": "殊",
+        "answer": "歹",
+        "remark": ""
+    },
+    {
+        "question": "占",
+        "answer": "卜：と、うらない",
+        "remark": ""
+    },
+    {
+        "question": "淫",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "葛",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "塞",
+        "answer": "土：つち",
+        "remark": ""
+    },
+    {
+        "question": "芯",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "酎",
+        "answer": "酉：とりへん",
+        "remark": ""
+    },
+    {
+        "question": "罵",
+        "answer": "罒：あみがしら、あみめ",
+        "remark": ""
+    },
+    {
+        "question": "肘",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "楷",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "哺",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "弄",
+        "answer": "廾：にじゅうあし、こまぬき",
+        "remark": ""
+    },
+    {
+        "question": "彙",
+        "answer": "彑：けいがしら",
+        "remark": ""
+    },
+    {
+        "question": "吏",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "斎",
+        "answer": "斉：せい",
+        "remark": ""
+    },
+    {
+        "question": "崇",
+        "answer": "山：やま",
+        "remark": ""
+    },
+    {
+        "question": "爵",
+        "answer": "爫：つめかんむり、つめがしら",
+        "remark": ""
+    },
+    {
+        "question": "懸",
+        "answer": "心：こころ",
+        "remark": ""
+    },
+    {
+        "question": "購",
+        "answer": "貝：かいへん",
+        "remark": ""
+    },
+    {
+        "question": "殴",
+        "answer": "殳：ほこづくり、るまた",
+        "remark": ""
+    },
+    {
+        "question": "矛",
+        "answer": "矛：ほこ",
+        "remark": ""
+    },
+    {
+        "question": "唄",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "釜",
+        "answer": "金：かね",
+        "remark": ""
+    },
+    {
+        "question": "挫",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "腎",
+        "answer": "肉：にく",
+        "remark": ""
+    },
+    {
+        "question": "捗",
+        "answer": "扌：てへん",
+        "remark": ""
+    },
+    {
+        "question": "阜",
+        "answer": "阜：おか",
+        "remark": ""
+    },
+    {
+        "question": "緻",
+        "answer": "糸：いとへん",
+        "remark": ""
+    },
+    {
+        "question": "沃",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "麓",
+        "answer": "木：き",
+        "remark": ""
+    },
+    {
+        "question": "恣",
+        "answer": "心：こころ",
+        "remark": ""
+    },
+    {
+        "question": "冊",
+        "answer": "冂",
+        "remark": ""
+    },
+    {
+        "question": "尚",
+        "answer": "⺌：しょう",
+        "remark": ""
+    },
+    {
+        "question": "睡",
+        "answer": "目：めへん",
+        "remark": ""
+    },
+    {
+        "question": "轄",
+        "answer": "車：くるまへん",
+        "remark": ""
+    },
+    {
+        "question": "砕",
+        "answer": "石：いしへん",
+        "remark": ""
+    },
+    {
+        "question": "廷",
+        "answer": "廴：えんにょう",
+        "remark": ""
+    },
+    {
+        "question": "秀",
+        "answer": "禾：のぎ",
+        "remark": ""
+    },
+    {
+        "question": "干",
+        "answer": "干：かん、いちじゅう",
+        "remark": ""
+    },
+    {
+        "question": "怨",
+        "answer": "心：こころ",
+        "remark": ""
+    },
+    {
+        "question": "鎌",
+        "answer": "金：かねへん",
+        "remark": ""
+    },
+    {
+        "question": "沙",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "須",
+        "answer": "頁：おおがい",
+        "remark": ""
+    },
+    {
+        "question": "椎",
+        "answer": "木：き、きへん",
+        "remark": ""
+    },
+    {
+        "question": "蔽",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "闇",
+        "answer": "門：もんがまえ",
+        "remark": ""
+    },
+    {
+        "question": "妖",
+        "answer": "女：おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "傲",
+        "answer": "亻：にんべん",
+        "remark": ""
+    },
+    {
+        "question": "曖",
+        "answer": "日：ひへん",
+        "remark": ""
+    },
+    {
+        "question": "術",
+        "answer": "行：ぎょうがまえ、ゆきがまえ",
+        "remark": ""
+    },
+    {
+        "question": "謁",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "粛",
+        "answer": "聿：ふでづくり",
+        "remark": ""
+    },
+    {
+        "question": "筒",
+        "answer": "竹：たけかんむり",
+        "remark": ""
+    },
+    {
+        "question": "駄",
+        "answer": "馬：うまへん",
+        "remark": ""
+    },
+    {
+        "question": "嫡",
+        "answer": "女：おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "触",
+        "answer": "角：つのへん",
+        "remark": ""
+    },
+    {
+        "question": "卵",
+        "answer": "卩：ふしづくり、わりふ",
+        "remark": ""
+    },
+    {
+        "question": "艶",
+        "answer": "色：いろ",
+        "remark": ""
+    },
+    {
+        "question": "瓦",
+        "answer": "瓦：かわら",
+        "remark": ""
+    },
+    {
+        "question": "痕",
+        "answer": "疒：やまいだれ",
+        "remark": ""
+    },
+    {
+        "question": "裾",
+        "answer": "衤：ころもへん",
+        "remark": ""
+    },
+    {
+        "question": "爪",
+        "answer": "爪：つめ",
+        "remark": ""
+    },
+    {
+        "question": "蔑",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "阪",
+        "answer": "阝：こざとへん",
+        "remark": ""
+    },
+    {
+        "question": "湧",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "嗅",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "鬱",
+        "answer": "鬯：ちょう",
+        "remark": ""
+    },
+    {
+        "question": "栽",
+        "answer": "木：き",
+        "remark": ""
+    },
+    {
+        "question": "践",
+        "answer": "足：あしへん",
+        "remark": ""
+    },
+    {
+        "question": "寡",
+        "answer": "宀：うかんむり",
+        "remark": ""
+    },
+    {
+        "question": "霜",
+        "answer": "雨：あめかんむり",
+        "remark": ""
+    },
+    {
+        "question": "渦",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "疑",
+        "answer": "疋：ひき",
+        "remark": ""
+    },
+    {
+        "question": "旺",
+        "answer": "日：ひへん",
+        "remark": ""
+    },
+    {
+        "question": "韓",
+        "answer": "韋：なめしがわ",
+        "remark": ""
+    },
+    {
+        "question": "頃",
+        "answer": "頁：おおがい",
+        "remark": ""
+    },
+    {
+        "question": "凄",
+        "answer": "冫：にすい",
+        "remark": ""
+    },
+    {
+        "question": "鶴",
+        "answer": "鳥：とり",
+        "remark": ""
+    },
+    {
+        "question": "蜂",
+        "answer": "虫：むしへん",
+        "remark": ""
+    },
+    {
+        "question": "袖",
+        "answer": "衤：ころもへん",
+        "remark": ""
+    },
+    {
+        "question": "弥",
+        "answer": "弓：ゆみへん",
+        "remark": ""
+    },
+    {
+        "question": "諧",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "曹",
+        "answer": "曰：ひらび、いわく",
+        "remark": ""
+    },
+    {
+        "question": "褐",
+        "answer": "衤：ころもへん",
+        "remark": ""
+    },
+    {
+        "question": "靴",
+        "answer": "革：かわへん",
+        "remark": ""
+    },
+    {
+        "question": "詔",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "款",
+        "answer": "欠：あくび、かける",
+        "remark": ""
+    },
+    {
+        "question": "弁",
+        "answer": "廾：にじゅうあし、こまぬき",
+        "remark": ""
+    },
+    {
+        "question": "岡",
+        "answer": "山：やま",
+        "remark": ""
+    },
+    {
+        "question": "玩",
+        "answer": "王：たまへん、おうへん",
+        "remark": ""
+    },
+    {
+        "question": "梗",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "醒",
+        "answer": "酉：とりへん",
+        "remark": ""
+    },
+    {
+        "question": "諦",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "貌",
+        "answer": "豸：むじなへん",
+        "remark": ""
+    },
+    {
+        "question": "憧",
+        "answer": "忄：りっしんべん",
+        "remark": ""
+    },
+    {
+        "question": "冶",
+        "answer": "冫：にすい",
+        "remark": ""
+    },
+    {
+        "question": "辣",
+        "answer": "辛：からい",
+        "remark": ""
+    },
+    {
+        "question": "誓",
+        "answer": "言：げん",
+        "remark": ""
+    },
+    {
+        "question": "劾",
+        "answer": "力：ちから",
+        "remark": ""
+    },
+    {
+        "question": "褒",
+        "answer": "衣：ころも",
+        "remark": ""
+    },
+    {
+        "question": "姻",
+        "answer": "女：おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "慶",
+        "answer": "心：こころ",
+        "remark": ""
+    },
+    {
+        "question": "豊",
+        "answer": "豆：まめ、まめへん",
+        "remark": ""
+    },
+    {
+        "question": "臆",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "伎",
+        "answer": "亻：にんべん",
+        "remark": ""
+    },
+    {
+        "question": "喉",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "戚",
+        "answer": "戈：ほこづくり、ほこがまえ",
+        "remark": ""
+    },
+    {
+        "question": "溺",
+        "answer": "氵：さんずい",
+        "remark": ""
+    },
+    {
+        "question": "頬",
+        "answer": "頁：おおがい",
+        "remark": ""
+    },
+    {
+        "question": "喩",
+        "answer": "口：くちへん",
+        "remark": ""
+    },
+    {
+        "question": "盲",
+        "answer": "目：め",
+        "remark": ""
+    },
+    {
+        "question": "逸",
+        "answer": "辶：しんにょう、しんにゅう",
+        "remark": ""
+    },
+    {
+        "question": "凹",
+        "answer": "凵：うけばこ",
+        "remark": ""
+    },
+    {
+        "question": "蛍",
+        "answer": "虫：むし",
+        "remark": ""
+    },
+    {
+        "question": "頑",
+        "answer": "頁：おおがい",
+        "remark": ""
+    },
+    {
+        "question": "量",
+        "answer": "里：さと",
+        "remark": ""
+    },
+    {
+        "question": "俺",
+        "answer": "亻：にんべん",
+        "remark": ""
+    },
+    {
+        "question": "畿",
+        "answer": "田：た",
+        "remark": ""
+    },
+    {
+        "question": "勾",
+        "answer": "勹：つつみがまえ",
+        "remark": ""
+    },
+    {
+        "question": "脊",
+        "answer": "肉：にく",
+        "remark": ""
+    },
+    {
+        "question": "填",
+        "answer": "土：つちへん",
+        "remark": ""
+    },
+    {
+        "question": "睦",
+        "answer": "目：めへん",
+        "remark": ""
+    },
+    {
+        "question": "璧",
+        "answer": "玉：たま",
+        "remark": ""
+    },
+    {
+        "question": "且",
+        "answer": "一：いち",
+        "remark": ""
+    },
+    {
+        "question": "勲",
+        "answer": "力：ちから",
+        "remark": ""
+    },
+    {
+        "question": "覇",
+        "answer": "覀：おおいかんむり",
+        "remark": ""
+    },
+    {
+        "question": "懐",
+        "answer": "忄：りっしんべん",
+        "remark": ""
+    },
+    {
+        "question": "弊",
+        "answer": "廾：にじゅうあし、こまぬき",
+        "remark": ""
+    },
+    {
+        "question": "包",
+        "answer": "勹：つつみがまえ",
+        "remark": ""
+    },
+    {
+        "question": "串",
+        "answer": "丨：ぼう、たてぼう",
+        "remark": "出題範囲では「串」と「中」のみ"
+    },
+    {
+        "question": "亀",
+        "answer": "亀：かめ",
+        "remark": ""
+    },
+    {
+        "question": "乞",
+        "answer": "乙：おつ",
+        "remark": ""
+    },
+    {
+        "question": "煎",
+        "answer": "灬：れっか、れんが",
+        "remark": ""
+    },
+    {
+        "question": "貼",
+        "answer": "貝：かいへん",
+        "remark": ""
+    },
+    {
+        "question": "勃",
+        "answer": "力：ちから",
+        "remark": ""
+    },
+    {
+        "question": "罷",
+        "answer": "罒：あみがしら、あみめ",
+        "remark": ""
+    },
+    {
+        "question": "奨",
+        "answer": "大：だい",
+        "remark": ""
+    },
+    {
+        "question": "庶",
+        "answer": "广：まだれ",
+        "remark": ""
+    },
+    {
+        "question": "飢",
+        "answer": "食：しょくへん",
+        "remark": ""
+    },
+    {
+        "question": "朕",
+        "answer": "月：つきへん",
+        "remark": ""
+    },
+    {
+        "question": "辞",
+        "answer": "辛：からい",
+        "remark": ""
+    },
+    {
+        "question": "媛",
+        "answer": "女：おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "僅",
+        "answer": "亻：にんべん",
+        "remark": ""
+    },
+    {
+        "question": "虎",
+        "answer": "虍：とらがしら、とらかんむり",
+        "remark": ""
+    },
+    {
+        "question": "羨",
+        "answer": "羊：ひつじ",
+        "remark": ""
+    },
+    {
+        "question": "妬",
+        "answer": "女：おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "訃",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "叔",
+        "answer": "又：また",
+        "remark": ""
+    },
+    {
+        "question": "虞",
+        "answer": "虍：とらがしら、とらかんむり",
+        "remark": ""
+    },
+    {
+        "question": "艦",
+        "answer": "舟：ふねへん",
+        "remark": ""
+    },
+    {
+        "question": "帥",
+        "answer": "巾：はば",
+        "remark": ""
+    },
+    {
+        "question": "頻",
+        "answer": "頁：おおがい",
+        "remark": ""
+    },
+    {
+        "question": "化",
+        "answer": "匕：ひ、さじ",
+        "remark": ""
+    },
+    {
+        "question": "巾",
+        "answer": "巾：はば",
+        "remark": ""
+    },
+    {
+        "question": "股",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "腺",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "賭",
+        "answer": "貝：かい、かいへん、こがい",
+        "remark": ""
+    },
+    {
+        "question": "貪",
+        "answer": "貝：かい、こがい",
+        "remark": ""
+    },
+    {
+        "question": "扉",
+        "answer": "戸：とだれ、とかんむり",
+        "remark": ""
+    },
+    {
+        "question": "韻",
+        "answer": "音：おと",
+        "remark": ""
+    },
+    {
+        "question": "雰",
+        "answer": "雨：あめかんむり",
+        "remark": ""
+    },
+    {
+        "question": "稼",
+        "answer": "禾：のぎへん",
+        "remark": ""
+    },
+    {
+        "question": "猿",
+        "answer": "犭：けものへん",
+        "remark": ""
+    },
+    {
+        "question": "農",
+        "answer": "辰：しんのたつ",
+        "remark": ""
+    },
+    {
+        "question": "錦",
+        "answer": "金：かねへん",
+        "remark": ""
+    },
+    {
+        "question": "舷",
+        "answer": "舟：ふねへん",
+        "remark": ""
+    },
+    {
+        "question": "詮",
+        "answer": "言：ごんべん",
+        "remark": ""
+    },
+    {
+        "question": "藤",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "核",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "閑",
+        "answer": "門：もんがまえ",
+        "remark": ""
+    },
+    {
+        "question": "嫌",
+        "answer": "女：おんなへん",
+        "remark": ""
+    },
+    {
+        "question": "尼",
+        "answer": "尸：しかばね、かばね",
+        "remark": ""
+    },
+    {
+        "question": "忍",
+        "answer": "心：こころ",
+        "remark": ""
+    },
+    {
+        "question": "自",
+        "answer": "自：みずから",
+        "remark": ""
+    },
+    {
+        "question": "駒",
+        "answer": "馬：うまへん",
+        "remark": ""
+    },
+    {
+        "question": "鍵",
+        "answer": "金：かねへん",
+        "remark": ""
+    },
+    {
+        "question": "膳",
+        "answer": "月：にくづき",
+        "remark": ""
+    },
+    {
+        "question": "瞳",
+        "answer": "目：めへん",
+        "remark": ""
+    },
+    {
+        "question": "唇",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "陥",
+        "answer": "阝：こざとへん",
+        "remark": ""
+    },
+    {
+        "question": "循",
+        "answer": "彳：ぎょうにんべん",
+        "remark": ""
+    },
+    {
+        "question": "繊",
+        "answer": "糸：いとへん",
+        "remark": ""
+    },
+    {
+        "question": "垣",
+        "answer": "土：つちへん",
+        "remark": ""
+    },
+    {
+        "question": "栃",
+        "answer": "木：きへん",
+        "remark": ""
+    },
+    {
+        "question": "翁",
+        "answer": "羽：はね",
+        "remark": ""
+    },
+    {
+        "question": "缶",
+        "answer": "缶：ほとぎ",
+        "remark": ""
+    },
+    {
+        "question": "呉",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "呈",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "丙",
+        "answer": "一：いち",
+        "remark": ""
+    },
+    {
+        "question": "匠",
+        "answer": "匚：はこがまえ",
+        "remark": ""
+    },
+    {
+        "question": "辛",
+        "answer": "辛：からい",
+        "remark": ""
+    },
+    {
+        "question": "卓",
+        "answer": "十：じゅう",
+        "remark": ""
+    },
+    {
+        "question": "斗",
+        "answer": "斗：とます",
+        "remark": ""
+    },
+    {
+        "question": "蛮",
+        "answer": "虫：むし",
+        "remark": ""
+    },
+    {
+        "question": "了",
+        "answer": "亅：はねぼう",
+        "remark": ""
+    },
+    {
+        "question": "幾",
+        "answer": "幺：いとがしら、よう",
+        "remark": ""
+    },
+    {
+        "question": "丘",
+        "answer": "一：いち",
+        "remark": ""
+    },
+    {
+        "question": "豪",
+        "answer": "豕：いのこ、ぶた",
+        "remark": ""
+    },
+    {
+        "question": "歳",
+        "answer": "止：とめる",
+        "remark": ""
+    },
+    {
+        "question": "丈",
+        "answer": "一：いち",
+        "remark": ""
+    },
+    {
+        "question": "腐",
+        "answer": "肉：にく",
+        "remark": ""
+    },
+    {
+        "question": "裏",
+        "answer": "衣：ころも",
+        "remark": ""
+    },
+    {
+        "question": "競",
+        "answer": "立：たつ",
+        "remark": ""
+    },
+    {
+        "question": "美",
+        "answer": "羊：ひつじ",
+        "remark": ""
+    },
+    {
+        "question": "喪",
+        "answer": "口：くち",
+        "remark": ""
+    },
+    {
+        "question": "翻",
+        "answer": "大：だい",
+        "remark": ""
+    },
+    {
+        "question": "寧",
+        "answer": "宀：うかんむり",
+        "remark": ""
+    },
+    {
+        "question": "軟",
+        "answer": "車：くるまへん",
+        "remark": ""
+    },
+    {
+        "question": "亭",
+        "answer": "亠：なべぶた",
+        "remark": ""
+    },
+    {
+        "question": "者",
+        "answer": "耂：おいかんむり、おいがしら",
+        "remark": ""
+    },
+    {
+        "question": "妥",
+        "answer": "女：おんな",
+        "remark": ""
+    },
+    {
+        "question": "斉",
+        "answer": "斉：せい",
+        "remark": "出題範囲では「斉」と「斎」のみ"
+    },
+    {
+        "question": "武",
+        "answer": "止：とめる",
+        "remark": ""
+    },
+    {
+        "question": "竜",
+        "answer": "竜：りゅう",
+        "remark": ""
+    },
+    {
+        "question": "耗",
+        "answer": "耒：すきへん、らいすき",
+        "remark": "出題範囲では「耗」と「耕」のみ"
+    },
+    {
+        "question": "臭",
+        "answer": "自：みずから",
+        "remark": "出題範囲では「臭」と「自」のみ"
+    },
+    {
+        "question": "塁",
+        "answer": "土：つち",
+        "remark": ""
+    },
+    {
+        "question": "庸",
+        "answer": "广：まだれ",
+        "remark": ""
+    },
+    {
+        "question": "薫",
+        "answer": "艹：くさかんむり",
+        "remark": ""
+    },
+    {
+        "question": "恭",
+        "answer": "㣺：したごころ",
+        "remark": "出題範囲では「恭」と「慕」のみ"
+    },
+    {
+        "question": "塑",
+        "answer": "土：つち",
+        "remark": ""
+    },
+    {
+        "question": "音",
+        "answer": "音：おと",
+        "remark": ""
+    },
+    {
+        "question": "威",
+        "answer": "女：おんな",
+        "remark": ""
+    },
+    {
+        "question": "雇",
+        "answer": "隹：ふるとり",
+        "remark": ""
+    },
+    {
+        "question": "兆",
+        "answer": "儿：ひとあし、にんにょう",
+        "remark": ""
+    },
+    {
+        "question": "般",
+        "answer": "舟：ふねへん",
+        "remark": ""
+    },
+    {
+        "question": "面",
+        "answer": "面：めん",
+        "remark": ""
+    },
+    {
+        "question": "癒",
+        "answer": "疒：やまいだれ",
+        "remark": ""
+    },
+    {
+        "question": "督",
+        "answer": "目：め",
+        "remark": ""
+    },
+    {
+        "question": "虐",
+        "answer": "虍：とらがしら、とらかんむり",
+        "remark": ""
+    },
+    {
+        "question": "魔",
+        "answer": "鬼：おに",
+        "remark": ""
+    },
+    {
+        "question": "剖",
+        "answer": "刂：りっとう",
+        "remark": ""
+    },
+    {
+        "question": "徹",
+        "answer": "彳：ぎょうにんべん",
+        "remark": ""
+    },
+    {
+        "question": "死",
+        "answer": "歹：かばねへん、いちたへん、がつへん",
+        "remark": ""
+    },
+    {
+        "question": "朱",
+        "answer": "木：き",
+        "remark": ""
+    },
+    {
+        "question": "準",
+        "answer": "氵：さんずい",
+        "remark": ""
+    }
+]

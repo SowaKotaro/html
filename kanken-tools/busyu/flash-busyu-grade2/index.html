@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>漢字の部首クイズ</title>
+    <style>
+        :root {
+            --bg: #f6f7f9;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --line: #d1d5db;
+            --accent: #2563eb;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Hiragino Mincho ProN", "游明朝", "Yu Mincho", "MS PMincho", "Times New Roman", serif;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            min-height: 370px;
+            border-radius: 0;
+            box-sizing: border-box;
+            padding: 24px;
+            display: grid;
+            grid-template-rows: 2fr 1fr; /* question area is 2x answer area */
+            align-items: center;
+            justify-items: center;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+        }
+
+        .question-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .question-kanji {
+            font-size: 120px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .answer-wrapper {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .answer-group {
+            visibility: hidden; /* Use visibility to keep space */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .show-answer .answer-group {
+            visibility: visible;
+        }
+
+        .answer-text {
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .remark-text {
+            margin-top: 12px;
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--text);
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 0;
+            font-family: inherit;
+        }
+
+        .btn.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .progress {
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .footer {
+            margin-top: 8px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .error {
+            margin-top: 8px;
+            color: #c0342f;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="card" class="card" aria-label="問題カード（クリック/タップで解答表示、もう一度で次へ）">
+            <div class="question-wrapper">
+                <div id="question-kanji" class="question-kanji"></div>
+            </div>
+            <div class="answer-wrapper">
+                <div id="answer-group" class="answer-group">
+                    <div id="answer-text" class="answer-text"></div>
+                    <div id="remark-text" class="remark-text"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="toggleBtn" class="btn primary" disabled>解答表示 / 次へ</button>
+            <button id="shuffleBtn" class="btn" disabled>ランダムに並べ替え</button>
+            <button id="resetBtn" class="btn" disabled>最初から</button>
+        </div>
+
+        <div class="progress" id="progress">0 / 0</div>
+        <div class="error" id="error" aria-live="polite"></div>
+        <div class="footer">カードをクリック/タップで部首を表示。もう一度で次の問題へ。</div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
