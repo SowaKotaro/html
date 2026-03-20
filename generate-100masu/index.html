@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100マス計算ジェネレーター作成手順</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            color: #0056b3;
+        }
+
+        h2 {
+            border-left: 5px solid #0056b3;
+            padding-left: 10px;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: inherit;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>100マス計算ジェネレーター</h1>
+
+        <h2>概要</h2>
+        <p>100マス計算のプリントを生成するExcelマクロ。</p>
+
+        <h2>機能</h2>
+        <ul>
+            <li>縦軸と横軸の項目を重複なしランダムで生成</li>
+            <li>項目は0から9の10個</li>
+            <li>縦軸と横軸の項目はランダムに並び替え</li>
+            <li>sheet1には足し算か掛け算のどちらかをプルダウンメニューで選択できる</li>
+            <li>sheet1に設置されたボタンを押下すると縦軸と横軸の整数が再生成</li>
+            <li>sheet2には模範解答が記載される</li>
+        </ul>
+
+        <h2>手順</h2>
+        <ol>
+            <li>新規でエクセルファイルを開く</li>
+            <li>M1セルを選択し、「データ」タブ -&gt; 「データの入力規則」 -&gt; 「データの入力規則」 -&gt; 「入力値の種類」-&gt;「リスト」-&gt;「元の値」に「+,*」と入力 -&gt;
+                「OK」をクリック</li>
+            <li>「開発」タブ -&gt; 「Visual Basic」をクリック</li>
+            <li>「挿入」-&gt;「標準モジュール」をクリック</li>
+            <li>以下のコードを貼り付け
+                <pre><code>Option Explicit
+
+' メイン処理（ボタンに紐づけ）
+Sub GenerateHyakumasu()
+    Dim rowNums As Variant
+    Dim colNums As Variant
+    
+    Randomize
+    
+    rowNums = GetRandomArray()
+    colNums = GetRandomArray()
+    
+    ' Sheet1（表示）
+    Call WriteHeadersToSheet(Sheets("Sheet1"), rowNums, colNums)
+    
+    ' Sheet2（解答）
+    Call WriteHeadersToSheet(Sheets("Sheet2"), rowNums, colNums)
+    
+    Call SaveAnswers(rowNums, colNums)
+    Call DisplayMode
+End Sub
+
+' 0～9のランダム配列（重複なし）
+Function GetRandomArray() As Variant
+    Dim arr(0 To 9) As Integer
+    Dim i As Integer, j As Integer, temp As Integer
+    
+    ' 初期化
+    For i = 0 To 9
+        arr(i) = i
+    Next i
+    
+    ' シャッフル（Fisher-Yates）
+    For i = 9 To 1 Step -1
+        j = Int(Rnd() * (i + 1))
+        temp = arr(i)
+        arr(i) = arr(j)
+        arr(j) = temp
+    Next i
+    
+    GetRandomArray = arr
+End Function
+
+' 行列ヘッダ書き込み
+Sub WriteHeadersToSheet(ws As Worksheet, rowNums As Variant, colNums As Variant)
+    Dim i As Integer
+    
+    ' 列（B2～K2）
+    For i = 0 To 9
+        ws.Cells(2, i + 2).Value = colNums(i)
+    Next i
+    
+    ' 行（A3～A12）
+    For i = 0 To 9
+        ws.Cells(i + 3, 1).Value = rowNums(i)
+    Next i
+End Sub
+
+Sub SaveAnswers(rowNums As Variant, colNums As Variant)
+    Dim i As Integer, j As Integer
+    Dim op As String
+    
+    op = Sheets("Sheet1").Range("M1").Value
+    
+    For i = 0 To 9
+        For j = 0 To 9
+            
+            If op = "+" Then
+                Sheets("Sheet2").Cells(i + 3, j + 2).Value = rowNums(i) + colNums(j)
+            ElseIf op = "*" Then
+                Sheets("Sheet2").Cells(i + 3, j + 2).Value = rowNums(i) * colNums(j)
+            End If
+            
+        Next j
+    Next i
+End Sub
+
+Sub Auto_Open()
+    Randomize
+End Sub
+
+Sub DisplayMode()
+    Dim i As Integer, j As Integer
+    Dim mode As String
+    
+    mode = Sheets("Sheet1").Range("M2").Value
+    
+    For i = 0 To 9
+        For j = 0 To 9
+            
+            If mode = "解答" Then
+                ' 解答表示
+                Sheets("Sheet1").Cells(i + 3, j + 2).Value = _
+                    Sheets("Sheet2").Cells(i + 3, j + 2).Value
+            Else
+                ' 問題（空欄）
+                Sheets("Sheet1").Cells(i + 3, j + 2).ClearContents
+            End If
+            
+        Next j
+    Next i
+End Sub</code></pre>
+            </li>
+            <li>VBAProjectのツリーのSheet1(Sheet1)ダブルクリック</li>
+            <li>以下のコードを貼り付け
+                <pre><code>Private Sub Worksheet_Change(ByVal Target As Range)
+    If Not Intersect(Target, Range("M2")) Is Nothing Then
+        Call DisplayMode
+    End If
+End Sub</code></pre>
+            </li>
+            <li>VBAの画面の保存ボタンをクリック（名前は適当に）</li>
+            <li>画面下部の「+」をクリックしてsheet2を作成</li>
+            <li>「開発」タブ -&gt; 「挿入」-&gt;「フォームコントロール」-&gt;「ボタン」をクリック</li>
+            <li>M1の下あたりにボタンを配置</li>
+            <li>「マクロの登録」ダイアログで「GenerateHyakumasu」を選択して「OK」をクリック</li>
+            <li>ボタンの文字を「作成」に変更</li>
+        </ol>
+    </div>
+</body>
+
+</html>
