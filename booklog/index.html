@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSWS’S BOOK SHELF.</title>
+<meta name="description" content="ブクログに記録した蔵書を、書影とともに並べた個人用の目録。">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#results">本文へスキップ</a>
+
+<header class="bar" id="bar">
+  <a class="bar__logo" href="#top">
+    <span class="bar__en">WSWS’S BOOK SHELF.</span>
+  </a>
+  <div class="bar__right">
+    <span class="bar__count" id="topcount"></span>
+    <button class="bar__theme" id="themeBtn" type="button" aria-label="配色を切り替える">
+      <span data-l="LIGHT">LIGHT</span><span data-l="DARK">DARK</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <i class="crop crop--tl"></i><i class="crop crop--tr"></i>
+    <i class="crop crop--bl"></i><i class="crop crop--br"></i>
+
+    <aside class="heroside" id="heroSide"></aside>
+
+    <h1 class="hero__display"><span class="hero__owner">WSWS’S</span>BOOK<br>SHELF<span class="hero__dot">.</span></h1>
+
+    <p class="hero__period" id="heroPeriod">2022.09 <em>→</em> 2026.09</p>
+  </section>
+
+  <div class="reel" id="reel"><div class="reel__track" id="reelTrack"></div></div>
+
+  <div class="ticker" id="ticker" aria-hidden="true"><div class="ticker__in" id="tickerIn"></div></div>
+
+  <section class="controls" aria-label="絞り込み">
+    <div class="controls__in">
+      <div class="search">
+        <label for="q">SEARCH</label>
+        <input type="search" id="q" placeholder="書名・著者・出版社・よみ" aria-label="キーワード検索">
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="種別で絞り込む"></div>
+      <div class="genrebar" id="genrebar">
+        <span class="genrebar__label">GENRE</span>
+        <div class="genrebar__list" id="genres" role="group" aria-label="ジャンルで絞り込む"></div>
+      </div>
+      <div class="controls__right">
+        <div class="select">
+          <select id="sort" aria-label="並び順">
+            <option value="finished">読了日が新しい順</option>
+            <option value="finished_asc">読了日が古い順</option>
+            <option value="title">書名順</option>
+            <option value="author">著者順</option>
+            <option value="rating">評価が高い順</option>
+            <option value="reviews">レビューが多い順</option>
+            <option value="pages">ページ数が多い順</option>
+            <option value="year">出版年が新しい順</option>
+          </select>
+        </div>
+        <div class="viewtoggle" role="group" aria-label="表示形式">
+          <button type="button" data-view="grid" aria-pressed="true">GRID</button>
+          <button type="button" data-view="list" aria-pressed="false">LIST</button>
+          <button type="button" data-view="map" aria-pressed="false">MAP</button>
+          <button type="button" data-view="tl" aria-pressed="false">TIME</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="results" id="results">
+    <div class="sechead">
+      <h2 class="sechead__tag">INDEX</h2>
+      <p class="sechead__meta" id="meta"></p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="list" id="list" hidden></div>
+
+    <div class="map" id="map" hidden>
+      <div class="map__ctrl">
+        <label class="map__sel"><span>X</span>
+          <select id="mapX" aria-label="横軸"></select>
+        </label>
+        <label class="map__sel"><span>Y</span>
+          <select id="mapY" aria-label="縦軸"></select>
+        </label>
+        <div class="map__count" id="mapN" role="group" aria-label="プロットする冊数">
+          <span class="map__count__label">表示数</span>
+          <button type="button" data-n="30" aria-pressed="true">30</button>
+          <button type="button" data-n="60" aria-pressed="false">60</button>
+          <button type="button" data-n="100" aria-pressed="false">100</button>
+          <button type="button" data-n="0" aria-pressed="false">ALL</button>
+        </div>
+        <p class="map__note" id="mapNote"></p>
+      </div>
+
+      <div class="map__frame">
+        <span class="map__axis map__axis--x" id="mapAxisX"></span>
+        <span class="map__axis map__axis--y" id="mapAxisY"></span>
+        <div class="map__plot" id="mapPlot"></div>
+        <div class="map__tip" id="mapTip" hidden></div>
+      </div>
+    </div>
+    <div class="tl" id="tl" hidden>
+      <div class="tl__ctrl">
+        <div class="tl__legend">
+          <span><i class="tl__key tl__key--span"></i>購入 → 読了</span>
+          <span><i class="tl__key tl__key--open"></i>積んだまま</span>
+          <span><i class="tl__key tl__key--only"></i>購入日不明</span>
+        </div>
+        <p class="map__note" id="tlNote"></p>
+      </div>
+
+      <div class="tl__frame">
+        <div class="tl__fixed">
+          <div class="tl__fixedinner" id="tlFixedInner">
+            <div class="tl__flowwrap">
+              <div class="tl__flow" id="tlFlow"></div>
+            </div>
+            <div class="tl__head" id="tlHead"></div>
+          </div>
+          <span class="tl__gutter">
+            <b class="tl__gutter__cap">月別</b>
+            <b class="tl__gutter__up">購入 ▲</b>
+            <b class="tl__gutter__down">読了 ▼</b>
+          </span>
+        </div>
+        <div class="tl__scroll" id="tlScroll">
+          <div class="tl__inner">
+            <div class="tl__body">
+              <div class="tl__grid" id="tlGrid"></div>
+              <div class="tl__rows" id="tlRows"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tl__tip" id="tlTip" hidden></div>
+    </div>
+
+    <p class="empty" id="empty" hidden>該当する本がありません。</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__in">
+    <p class="foot__display">WSWS’S<br>BOOK SHELF</p>
+    <div class="foot__cols">
+      <div>
+        <span class="boxlabel">STATUS</span>
+        <p class="foot__note" id="footnote"></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sheet" id="sheet" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet__scrim" data-close></div>
+  <div class="sheet__panel" role="document">
+    <div class="sheet__head">
+      <span class="sheet__no" id="sheetNo"></span>
+      <button class="sheet__close" type="button" data-close aria-label="閉じる">CLOSE ×</button>
+    </div>
+    <div class="sheet__body" id="sheetBody"></div>
+  </div>
+</div>
+
+<script src="data/books.js"></script>
+<script src="data/timeline.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
