@@ -1,0 +1,10 @@
+# APIキー（絶対にコミットしない）
+.apikey/
+googlebooks/.apikey
+
+# 取得データ
+googlebooks/raw/
+openbd/raw/
+
+# Python
+__pycache__/
