@@ -4,63 +4,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>わそわそのウェブペーーーーージ</title>
+    <title>WSWS.WORKS</title>
+    <meta name="description" content="WSWS.WORKS — 個人開発のプロダクトを紹介するポートフォリオサイト。">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='7' fill='%23fff' stroke='%23111114' stroke-width='2'/%3E%3Cpath d='M4.2 10.5 6.9 21.5 9.7 14.5 12.5 21.5 15.2 10.5' fill='none' stroke='%23111114' stroke-width='2.6' stroke-linejoin='miter' stroke-miterlimit='4'/%3E%3Cpath d='M17.6 11.2H22.6L20.2 14.9C22.9 14.9 24 16.5 24 18.3 24 20.4 22.6 21.6 20.6 21.6 19.4 21.6 18.5 21.2 17.9 20.5' fill='none' stroke='%23111114' stroke-width='2.3'/%3E%3Ccircle cx='27' cy='21' r='1.6' fill='%232a2aff'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
-    <div class="background-container"></div>
+    <a class="skip" href="#works">コンテンツへ移動</a>
 
-    <header class="wsws-head">
-        <div class="parallax-logo-container">
-            <img src="images/wsws_logo_blur.png" class="parallax-layer" data-speed="-2" alt="">
-            <img src="images/wsws_logo_red.png" class="parallax-layer" data-speed="-6" alt="">
-            <img src="images/wsws_logo_orange.png" class="parallax-layer" data-speed="-11" alt="">
-            <img src="images/wsws_logo_yellow.png" class="parallax-layer" data-speed="-18" alt="「わそわそのウェブペーーーージ」という文字">
-        </div>
-    </header>
+    <!-- 左端の縦レール(typography.or.jp 参考) -->
+    <aside class="rail" aria-hidden="true">
+        <span class="rail-copy">© 2026 WSWS.WORKS</span>
+        <span class="rail-progress"><i data-progress></i></span>
+        <span class="rail-index"><b data-index>01</b> / 04</span>
+    </aside>
 
-    <main class="contents">
-        <div class="content">
-            <img src="images/wa-bullet.png" class="content-bullet" alt="">
-            <a href="http://www.wasowaso.com/Upper10" target="_blank" rel="noopener noreferrer">
-                <h2>
-                    長～～～い言葉の<br>
-                    データベース
-                </h2>
-            </a>
-        </div>
-        <div class="content">
-            <img src="images/so-bullet.png" class="content-bullet" alt="">
-            <a href="http://www.wasowaso.com/TsundokuTL-v2" target="_blank" rel="noopener noreferrer">
-                <h2>
-                    積読タイムライン
-                </h2>
-            </a>
-        </div>
-        <div class="content">
-            <img src="images/wa-bullet.png" class="content-bullet" alt="">
-            <a href="http://www.wasowaso.com/vue-deploy-test" target="_blank" rel="noopener noreferrer">
-                <h2>
-                    FastAPI + Vue <br>
-                    deployment test<br>
-                    CLICK COUNTER
-                </h2>
-            </a>
-        </div>
-        <div class="content">
-            <img src="images/so-bullet.png" class="content-bullet" alt="">
-            <a href="http://www.wasowaso.com/romberg" target="_blank" rel="noopener noreferrer">
-                <h2>
-                    ロンバーグ積分<br>
-                    計算ツール
-                </h2>
-            </a>
-        </div>
-    </main>
+    <div class="page">
+        <header class="site-header">
+            <a class="logo" href="#top" aria-label="WSWS.WORKS トップへ">WSWS<span>.</span>WORKS</a>
+            <nav class="nav" aria-label="メインナビゲーション">
+                <a href="#works">Works</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a class="btn btn--outline header-cta" href="#contact">Get in touch</a>
+        </header>
+
+        <main>
+            <!-- 01 HERO -->
+            <section class="hero" id="top" data-section data-label="01">
+                <div class="hero-shapes" aria-hidden="true">
+                    <span class="shape shape--ring"></span>
+                    <span class="shape shape--bar"></span>
+                    <span class="shape shape--dot"></span>
+                    <span class="shape shape--square"></span>
+                </div>
+
+                <p class="hero-eyebrow mono">PERSONAL PRODUCTS PORTFOLIO</p>
+
+                <h1 class="hero-title" aria-label="WSWS.WORKS">
+                    <span class="line" aria-hidden="true"><span>WSWS</span></span>
+                    <span class="line" aria-hidden="true"><span><em>.</em>WORKS</span></span>
+                </h1>
+
+                <div class="hero-info">
+                    <p class="hero-lead">つくったものを、<br>ここに並べる。</p>
+                    <p class="hero-desc">わそわそが個人で開発しているプロダクトのポートフォリオです。ツール、データベース、ちいさなウェブアプリを置いています。</p>
+                    <dl class="hero-meta mono">
+                        <div><dt>PRODUCTS</dt><dd>03</dd></div>
+                        <div><dt>UPDATED</dt><dd>2026.09</dd></div>
+                    </dl>
+                    <a class="hero-scroll mono" href="#works">SCROLL <span aria-hidden="true">↓</span></a>
+                </div>
+            </section>
+
+            <!-- 02 WORKS -->
+            <section class="works" id="works" data-section data-label="02">
+                <div class="section-head reveal">
+                    <p class="eyebrow mono">02 — WORKS</p>
+                    <h2 class="section-title">プロダクト<small>Products</small></h2>
+                    <p class="section-count mono" aria-label="3件">03</p>
+                </div>
+
+                <!--
+                    画像はすべて公開中のサイトのスクリーンショット(images/works/、1280x800)。
+                    説明文(.card-desc)・技術スタック(.stack)はモック。実データが揃ったら差し替える。
+                    長い言葉のデータベースは v1〜v3 の3世代。v1/v2 は非公開予定のため CLOSED 表示でリンクなし。
+                    非公開にした世代を戻す場合は .gen-foot の <span class="closed-note"> を <a class="visit"> に置き換える。
+                -->
+                <ul class="grid">
+                    <li class="card card--feature reveal">
+                        <div class="feature-info">
+                            <div class="card-meta mono"><span class="card-no">01</span><span>3 GENERATIONS · v1 → v3</span></div>
+                            <h3 class="card-title">長い言葉のデータベース</h3>
+                            <ul class="gen-list" role="tablist" aria-label="世代を選ぶ" data-tabs>
+                                <li role="presentation"><button type="button" role="tab" id="tab-v1" aria-controls="panel-v1" aria-selected="false" tabindex="-1"><span class="gen-v mono">v1</span><span class="gen-trait">和風の壁紙と、表で組んだ一覧</span><span class="gen-status mono is-closed">CLOSED</span></button></li>
+                                <li role="presentation"><button type="button" role="tab" id="tab-v2" aria-controls="panel-v2" aria-selected="false" tabindex="-1"><span class="gen-v mono">v2</span><span class="gen-trait">和紙調のUIと、5つの背景テーマ</span><span class="gen-status mono is-closed">CLOSED</span></button></li>
+                                <li role="presentation"><button type="button" role="tab" id="tab-v3" aria-controls="panel-v3" aria-selected="true" tabindex="0"><span class="gen-v mono">v3</span><span class="gen-trait">白基調のモダンUI。ランキングとダークモード</span><span class="gen-status mono is-live"><i></i>ACCESSIBLE</span></button></li>
+                            </ul>
+                        </div>
+                        <div class="feature-gallery">
+                            <div class="gen-panel" role="tabpanel" id="panel-v1" aria-labelledby="tab-v1" hidden>
+                            <div class="gallery is-closed" data-gallery>
+                                <div class="media">
+                                    <img class="gallery-img" src="images/works/nagai-v1-top.jpg" alt="v1 トップページ。和風の壁紙と挿絵" width="1280" height="800" loading="lazy" decoding="async">
+                                    <span class="badge badge--closed mono">CLOSED</span>
+                                </div>
+                                <div class="gallery-bar mono">
+                                    <span class="gallery-caption" data-total="4"><b>01</b> / 04 — トップ</span>
+                                </div>
+                                <ul class="gallery-thumbs">
+                                    <li><button type="button" class="is-active" aria-current="true" data-src="images/works/nagai-v1-top.jpg" data-alt="v1 トップページ。和風の壁紙と挿絵" data-caption="トップ" aria-label="1枚目: トップ"><img src="images/works/nagai-v1-top.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v1-list.jpg" data-alt="v1 単語一覧ページ。表形式の一覧と絞り込み検索欄" data-caption="単語一覧 / 絞り込み検索" aria-label="2枚目: 単語一覧 / 絞り込み検索"><img src="images/works/nagai-v1-list.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v1-stats.jpg" data-alt="v1 統計ページ。登録数の推移グラフ" data-caption="統計(ベータ) / 登録推移" aria-label="3枚目: 統計(ベータ) / 登録推移"><img src="images/works/nagai-v1-stats.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v1-heatmap.jpg" data-alt="v1 統計ページ。先頭文字と末尾文字のヒートマップ" data-caption="先頭・末尾文字ヒートマップ" aria-label="4枚目: 先頭・末尾文字ヒートマップ"><img src="images/works/nagai-v1-heatmap.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+                                </ul>
+                            </div>
+                            <p class="gen-foot mono"><span class="closed-note">CLOSED — <s>wasowaso.com/Upper10</s></span></p>
+                        </div>
+                            <div class="gen-panel" role="tabpanel" id="panel-v2" aria-labelledby="tab-v2" hidden>
+                            <div class="gallery is-closed" data-gallery>
+                                <div class="media">
+                                    <img class="gallery-img" src="images/works/nagai-v2-top.jpg" alt="v2 トップページ。和紙調の背景に5つの入口カード" width="1280" height="800" loading="lazy" decoding="async">
+                                    <span class="badge badge--closed mono">CLOSED</span>
+                                </div>
+                                <div class="gallery-bar mono">
+                                    <span class="gallery-caption" data-total="4"><b>01</b> / 04 — トップ / 5つの入口</span>
+                                </div>
+                                <ul class="gallery-thumbs">
+                                    <li><button type="button" class="is-active" aria-current="true" data-src="images/works/nagai-v2-top.jpg" data-alt="v2 トップページ。和紙調の背景に5つの入口カード" data-caption="トップ / 5つの入口" aria-label="1枚目: トップ / 5つの入口"><img src="images/works/nagai-v2-top.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v2-list.jpg" data-alt="v2 単語一覧ページ。札の形をした並べ替えボタン" data-caption="単語一覧 / 札の並べ替えUI" aria-label="2枚目: 単語一覧 / 札の並べ替えUI"><img src="images/works/nagai-v2-list.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v2-stats.jpg" data-alt="v2 統計ページ。累積総数と日別追加数のグラフ" data-caption="統計 / 登録推移グラフ" aria-label="3枚目: 統計 / 登録推移グラフ"><img src="images/works/nagai-v2-stats.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v2-theme.jpg" data-alt="v2 背景テーマを「籠」に切り替えた単語一覧" data-caption="背景テーマ切替 / 籠" aria-label="4枚目: 背景テーマ切替 / 籠"><img src="images/works/nagai-v2-theme.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+                                </ul>
+                            </div>
+                            <p class="gen-foot mono"><span class="closed-note">CLOSED — <s>nagai-kotoba-database.com</s></span></p>
+                        </div>
+                            <div class="gen-panel" role="tabpanel" id="panel-v3" aria-labelledby="tab-v3">
+                            <div class="gallery" data-gallery>
+                                <div class="media">
+                                    <img class="gallery-img" src="images/works/nagai-v3-home.jpg" alt="v3 トップページ。検索窓と収録語数を大きく表示" width="1280" height="800" loading="lazy" decoding="async">
+                                    <span class="badge badge--live mono"><i></i>ACCESSIBLE</span>
+                                </div>
+                                <div class="gallery-bar mono">
+                                    <span class="gallery-caption" data-total="5"><b>01</b> / 05 — トップ / 検索と収録語数</span>
+                                </div>
+                                <ul class="gallery-thumbs">
+                                    <li><button type="button" class="is-active" aria-current="true" data-src="images/works/nagai-v3-home.jpg" data-alt="v3 トップページ。検索窓と収録語数を大きく表示" data-caption="トップ / 検索と収録語数" aria-label="1枚目: トップ / 検索と収録語数"><img src="images/works/nagai-v3-home.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v3-ranking.jpg" data-alt="v3 ランキングページ。読みが長い言葉など11の指標" data-caption="ランキング / 11の指標" aria-label="2枚目: ランキング / 11の指標"><img src="images/works/nagai-v3-ranking.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v3-stats.jpg" data-alt="v3 収録統計ページ。頻出の語を大きさで示すワードクラウド" data-caption="収録統計 / ワードクラウド" aria-label="3枚目: 収録統計 / ワードクラウド"><img src="images/works/nagai-v3-stats.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v3-genres.jpg" data-alt="v3 ジャンルページ。大・中・小の階層で分類を辿れる" data-caption="ジャンル / 324分類を階層で" aria-label="4枚目: ジャンル / 324分類を階層で"><img src="images/works/nagai-v3-genres.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/nagai-v3-dark.jpg" data-alt="v3 単語一覧ページのダークモード表示" data-caption="ダークモード / 単語一覧" aria-label="5枚目: ダークモード / 単語一覧"><img src="images/works/nagai-v3-dark.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+                                </ul>
+                            </div>
+                            <p class="gen-foot mono"><a class="visit" href="https://www.nagai-kotoba-database.jp" target="_blank" rel="noopener noreferrer">VISIT nagai-kotoba-database.jp <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></p>
+                        </div>
+                        </div>
+                    </li>
+
+                    <li class="card reveal">
+                        <div class="card-meta mono"><span class="card-no">02</span><span>wasowaso.com/romberg</span></div>
+                        <div class="gallery" data-gallery>
+                                <div class="media">
+                                    <img class="gallery-img" src="images/works/romberg-graph.jpg" alt="ロンバーグ積分計算ツール。入力した数式のグラフ" width="1280" height="800" loading="lazy" decoding="async">
+                                    
+                                </div>
+                                <div class="gallery-bar mono">
+                                    <span class="gallery-caption" data-total="3"><b>01</b> / 03 — グラフ描画 / x^2 * sin(x)</span>
+                                </div>
+                                <ul class="gallery-thumbs">
+                                    <li><button type="button" class="is-active" aria-current="true" data-src="images/works/romberg-graph.jpg" data-alt="ロンバーグ積分計算ツール。入力した数式のグラフ" data-caption="グラフ描画 / x^2 * sin(x)" aria-label="1枚目: グラフ描画 / x^2 * sin(x)"><img src="images/works/romberg-graph.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/romberg-trapezoid.jpg" data-alt="ロンバーグ積分計算ツール。台形に分割した積分区間と計算結果" data-caption="台形積分 / 分割して面積を近似" aria-label="2枚目: 台形積分 / 分割して面積を近似"><img src="images/works/romberg-trapezoid.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/romberg-table.jpg" data-alt="ロンバーグ積分計算ツール。分割数ごとの近似値と誤差の表" data-caption="ロンバーグ積分 / 分割数ごとの誤差" aria-label="3枚目: ロンバーグ積分 / 分割数ごとの誤差"><img src="images/works/romberg-table.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+                                </ul>
+                            </div>
+                        <h3 class="card-title"><a class="card-link" href="http://www.wasowaso.com/romberg" target="_blank" rel="noopener noreferrer">ロンバーグ積分計算ツール</a></h3>
+                        <span class="visit mono">VISIT <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                    </li>
+
+                    <li class="card reveal">
+                        <div class="card-meta mono"><span class="card-no">03</span><span>wasowaso.com/booklog</span></div>
+                        <div class="gallery" data-gallery>
+                                <div class="media">
+                                    <img class="gallery-img" src="images/works/bookshelf-hero.jpg" alt="WSWS&#x27;S BOOKSHELF. トップ。最新の一冊と読了本の帯" width="1280" height="800" loading="lazy" decoding="async">
+                                    
+                                </div>
+                                <div class="gallery-bar mono">
+                                    <span class="gallery-caption" data-total="4"><b>01</b> / 04 — トップ / 最新の一冊</span>
+                                </div>
+                                <ul class="gallery-thumbs">
+                                    <li><button type="button" class="is-active" aria-current="true" data-src="images/works/bookshelf-hero.jpg" data-alt="WSWS&#x27;S BOOKSHELF. トップ。最新の一冊と読了本の帯" data-caption="トップ / 最新の一冊" aria-label="1枚目: トップ / 最新の一冊"><img src="images/works/bookshelf-hero.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/bookshelf-grid.jpg" data-alt="WSWS&#x27;S BOOKSHELF. 書棚のグリッド表示。ジャンルで絞り込み可能" data-caption="書棚 / グリッド表示" aria-label="2枚目: 書棚 / グリッド表示"><img src="images/works/bookshelf-grid.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/bookshelf-detail.jpg" data-alt="WSWS&#x27;S BOOKSHELF. 書籍の詳細。評価と書誌情報" data-caption="書籍詳細 / 評価・書誌情報" aria-label="3枚目: 書籍詳細 / 評価・書誌情報"><img src="images/works/bookshelf-detail.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+<li><button type="button" data-src="images/works/bookshelf-dark.jpg" data-alt="WSWS&#x27;S BOOKSHELF. ダークテーマのトップ" data-caption="ダークテーマ" aria-label="4枚目: ダークテーマ"><img src="images/works/bookshelf-dark.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></button></li>
+                                </ul>
+                            </div>
+                        <h3 class="card-title"><a class="card-link" href="https://www.wasowaso.com/booklog/" target="_blank" rel="noopener noreferrer">WSWS'S BOOKSHELF.</a></h3>
+                        <span class="visit mono">VISIT <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                    </li>
+
+                    <li class="card card--next reveal" aria-label="次のプロダクト(準備中)">
+                        <div class="card-meta mono"><span class="card-no">04</span><span>in progress</span></div>
+                        <div class="next-body">
+                            <span class="next-mark mono" aria-hidden="true">TBA</span>
+                            <p class="next-text">次のプロダクトは、<br>準備中です。</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 03 ABOUT -->
+            <section class="about" id="about" data-section data-label="03">
+                <div class="section-head reveal">
+                    <p class="eyebrow mono">03 — ABOUT</p>
+                    <h2 class="section-title">わそわそ<small>About</small></h2>
+                </div>
+                <div class="about-body">
+                    <dl class="about-list reveal">
+                        <div><dt class="mono">NAME</dt><dd>わそわそ</dd></div>
+                        <div><dt class="mono">WORKS</dt><dd>個人開発プロダクト 3 件</dd></div>
+                    </dl>
+                </div>
+            </section>
+        </main>
+
+        <!-- 04 CONTACT / FOOTER -->
+        <footer class="site-footer" id="contact" data-section data-label="04">
+            <div class="footer-top">
+                <p class="eyebrow mono">04 — CONTACT</p>
+                <p class="footer-lead">プロダクトへのご意見・<br>ご感想は、こちらから。</p>
+                <!-- 連絡先はモック。決まったら <a> に置き換える -->
+                <ul class="contact-list mono">
+                    <li><span>MAIL</span><span class="is-mock">— (モック)</span></li>
+                    <li><span>GITHUB</span><span class="is-mock">— (モック)</span></li>
+                    <li><span>X</span><span class="is-mock">— (モック)</span></li>
+                </ul>
+            </div>
+            <p class="footer-mark" aria-hidden="true">WSWS<em>.WORKS</em></p>
+            <div class="footer-bottom mono">
+                <span>© 2026 WSWS.WORKS</span>
+                <a href="#top">BACK TO TOP ↑</a>
+            </div>
+        </footer>
+    </div>
 
     <script src="./script/script.js"></script>
 </body>

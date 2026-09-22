@@ -1,55 +1,143 @@
-const cards = document.querySelectorAll('.content');
+(() => {
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const TILT_STRENGTH = 15; // How much the card tilts
+    // ヒーローの入場アニメーション(フォント読み込み後に開始してちらつきを避ける)
+    const start = () => document.body.classList.add('is-ready');
+    if (document.fonts && document.fonts.ready) {
+        Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 1200))]).then(start);
+    } else {
+        start();
+    }
 
-function applyTilt(e, card) {
-    const { width, height, left, top } = card.getBoundingClientRect();
-    const x = e.clientX - left;
-    const y = e.clientY - top;
+    // スクロール連動の出現
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-in');
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach((el, i) => {
+            // 同じグリッド内のカードは少しずつ時間差をつける
+            el.style.transitionDelay = el.classList.contains('card') ? `${(i % 2) * 90}ms` : '0ms';
+            io.observe(el);
+        });
+    } else {
+        reveals.forEach((el) => el.classList.add('is-in'));
+    }
 
-    const rotateX = (y / height - 0.5) * TILT_STRENGTH * -1;
-    const rotateY = (x / width - 0.5) * TILT_STRENGTH;
+    // 左レール: 進捗バーと現在のセクション番号
+    const progress = document.querySelector('[data-progress]');
+    const index = document.querySelector('[data-index]');
+    const sections = document.querySelectorAll('[data-section]');
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-}
+    const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        const ratio = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+        if (progress) progress.style.transform = `scaleY(${ratio})`;
+    };
 
-function resetTilt(card) {
-    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-}
+    const updateIndex = () => {
+        let current = sections[0];
+        sections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= innerHeight * 0.4) current = section;
+        });
+        // ページ最下部ではフッターを現在地とする
+        if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) {
+            current = sections[sections.length - 1];
+        }
+        if (index && current) index.textContent = current.dataset.label;
+    };
 
-// --- Parallax Logo Effect ---
-const parallaxLayers = document.querySelectorAll('.parallax-layer');
+    let ticking = false;
+    addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            updateProgress();
+            updateIndex();
+            ticking = false;
+        });
+    }, { passive: true });
+    updateProgress();
+    updateIndex();
 
-function applyParallax(e) {
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
+    // ギャラリー: サムネイルで大きな1枚を切り替える
+    document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+        const img = gallery.querySelector('.gallery-img');
+        const caption = gallery.querySelector('.gallery-caption');
+        const thumbs = [...gallery.querySelectorAll('.gallery-thumbs button')];
+        const total = thumbs.length;
 
-    const moveX = (e.clientX - centerX);
-    const moveY = (e.clientY - centerY);
+        thumbs.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('is-active')) return;
+                thumbs.forEach((b) => {
+                    b.classList.toggle('is-active', b === btn);
+                    if (b === btn) b.setAttribute('aria-current', 'true');
+                    else b.removeAttribute('aria-current');
+                });
+                caption.innerHTML = `<b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')} — `;
+                caption.append(btn.dataset.caption);
 
-    parallaxLayers.forEach(layer => {
-        const speed = parseFloat(layer.dataset.speed || 0);
-        const x = (moveX * speed) / 120;
-        const y = (moveY * speed) / 120;
-        layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+                // 読み込みが済んでから差し替えて、白抜けを避ける
+                const next = new Image();
+                next.onload = next.onerror = () => {
+                    img.classList.add('is-swapping');
+                    setTimeout(() => {
+                        img.src = btn.dataset.src;
+                        img.alt = btn.dataset.alt;
+                        img.classList.remove('is-swapping');
+                    }, reduceMotion ? 0 : 200);
+                };
+                next.src = btn.dataset.src;
+            });
+        });
     });
-}
 
-// Add listeners only on non-touch/larger screens
-if (window.matchMedia('(min-width: 1025px)').matches) {
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            applyTilt(e, card);
-        });
+    // 世代タブ(長い言葉のデータベース v1〜v3)
+    document.querySelectorAll('[data-tabs]').forEach((list) => {
+        const tabs = [...list.querySelectorAll('[role="tab"]')];
 
-        card.addEventListener('mouseleave', () => {
-            resetTilt(card);
-        });
+        const select = (tab, focus) => {
+            tabs.forEach((t) => {
+                const on = t === tab;
+                t.setAttribute('aria-selected', on);
+                t.tabIndex = on ? 0 : -1;
+                document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+            });
+            if (focus) tab.focus();
+        };
 
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'transform 0.1s ease-out';
+        tabs.forEach((tab) => tab.addEventListener('click', () => select(tab)));
+
+        list.addEventListener('keydown', (e) => {
+            const i = tabs.indexOf(document.activeElement);
+            if (i < 0) return;
+            const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+            if (step) {
+                e.preventDefault();
+                select(tabs[(i + step + tabs.length) % tabs.length], true);
+            } else if (e.key === 'Home' || e.key === 'End') {
+                e.preventDefault();
+                select(tabs[e.key === 'Home' ? 0 : tabs.length - 1], true);
+            }
         });
     });
 
-    window.addEventListener('mousemove', applyParallax);
-}
+    // ヒーローの図形: マウス位置に合わせた軽い視差
+    const hero = document.querySelector('.hero');
+    if (hero && !reduceMotion && matchMedia('(hover: hover)').matches) {
+        hero.addEventListener('pointermove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            hero.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width - 0.5).toFixed(3));
+            hero.style.setProperty('--my', ((e.clientY - rect.top) / rect.height - 0.5).toFixed(3));
+        });
+        hero.addEventListener('pointerleave', () => {
+            hero.style.setProperty('--mx', 0);
+            hero.style.setProperty('--my', 0);
+        });
+    }
+})();
